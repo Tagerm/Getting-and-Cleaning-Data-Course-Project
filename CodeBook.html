@@ -1,0 +1,4829 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+
+
+
+<title>Partial preview</title>
+
+<script src="index_files/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="index_files/bootstrap-3.3.5/css/bootstrap.min.css" rel="stylesheet" />
+<script src="index_files/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="index_files/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="index_files/navigation-1.1/tabsets.js"></script>
+<link href="index_files/highlightjs-9.12.0/default.css" rel="stylesheet" />
+<script src="index_files/highlightjs-9.12.0/highlight.js"></script>
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+<script type="text/javascript">
+if (window.hljs) {
+  hljs.configure({languages: []});
+  hljs.initHighlightingOnLoad();
+  if (document.readyState && document.readyState === "complete") {
+    window.setTimeout(function() { hljs.initHighlighting(); }, 0);
+  }
+}
+</script>
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+  background-color: transparent;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<!-- code folding -->
+
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+
+
+<div class="fluid-row" id="header">
+
+
+
+
+</div>
+
+
+<div id="metadata" class="section level3">
+<h3>Metadata</h3>
+<div id="description" class="section level4">
+<h4>Description</h4>
+<p><strong>Dataset name</strong>: data</p>
+<p>The dataset has N=10297 rows and 68 columns. 10297 rows have no missing values on any column.</p>
+<details>
+<p><summary title="Expand this section to see some additional metadata in a structured format that is useful for search engines">Metadata for search engines</summary></p>
+<ul>
+<li><strong>Date published</strong>: 2020-08-10</li>
+</ul>
+<table>
+<thead>
+<tr class="header">
+<th align="left">x</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">subject</td>
+</tr>
+<tr class="even">
+<td align="left">activities</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAcc-mean()-X</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAcc-mean()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAcc-mean()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">tGravityAcc-mean()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">tGravityAcc-mean()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">tGravityAcc-mean()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAccJerk-mean()-X</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAccJerk-mean()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAccJerk-mean()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyro-mean()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyro-mean()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyro-mean()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-mean()-X</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyroJerk-mean()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-mean()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAccMag-mean()</td>
+</tr>
+<tr class="odd">
+<td align="left">tGravityAccMag-mean()</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAccJerkMag-mean()</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyroMag-mean()</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyroJerkMag-mean()</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyAcc-mean()-X</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyAcc-mean()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyAcc-mean()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyAccJerk-mean()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyAccJerk-mean()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyAccJerk-mean()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyGyro-mean()-X</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyGyro-mean()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyGyro-mean()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyAccMag-mean()</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyBodyAccJerkMag-mean()</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyBodyGyroMag-mean()</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyBodyGyroJerkMag-mean()</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAcc-std()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAcc-std()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAcc-std()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">tGravityAcc-std()-X</td>
+</tr>
+<tr class="even">
+<td align="left">tGravityAcc-std()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">tGravityAcc-std()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAccJerk-std()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAccJerk-std()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyAccJerk-std()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyro-std()-X</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyro-std()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyro-std()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyroJerk-std()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-std()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyroJerk-std()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAccMag-std()</td>
+</tr>
+<tr class="even">
+<td align="left">tGravityAccMag-std()</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyAccJerkMag-std()</td>
+</tr>
+<tr class="even">
+<td align="left">tBodyGyroMag-std()</td>
+</tr>
+<tr class="odd">
+<td align="left">tBodyGyroJerkMag-std()</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyAcc-std()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyAcc-std()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyAcc-std()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyAccJerk-std()-X</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyAccJerk-std()-Y</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyAccJerk-std()-Z</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyGyro-std()-X</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyGyro-std()-Y</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyGyro-std()-Z</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyAccMag-std()</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyBodyAccJerkMag-std()</td>
+</tr>
+<tr class="odd">
+<td align="left">fBodyBodyGyroMag-std()</td>
+</tr>
+<tr class="even">
+<td align="left">fBodyBodyGyroJerkMag-std()</td>
+</tr>
+</tbody>
+</table>
+</details>
+<p>#Variables</p>
+</div>
+</div>
+<div id="subject" class="section level3 tabset">
+<h3>subject</h3>
+<div id="subject_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_subject_distribution-24-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="subject_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="6%" />
+<col width="8%" />
+<col width="8%" />
+<col width="11%" />
+<col width="3%" />
+<col width="5%" />
+<col width="3%" />
+<col width="7%" />
+<col width="7%" />
+<col width="33%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">subject</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">1</td>
+<td align="left">17</td>
+<td align="left">30</td>
+<td align="right">16.14927</td>
+<td align="right">8.677506</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2586&gt;&lt;U+2587&gt;&lt;U+2587&gt;&lt;U+2587&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="activities" class="section level3 tabset">
+<h3>activities</h3>
+<div id="activities_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_activities_distribution-31-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="activities_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="right">n_unique</th>
+<th align="right">empty</th>
+<th align="left">min</th>
+<th align="left">max</th>
+<th align="right">whitespace</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">activities</td>
+<td align="left">character</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="right">6</td>
+<td align="right">0</td>
+<td align="left">3</td>
+<td align="left">14</td>
+<td align="right">0</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAcc_mean___X" class="section level3 tabset">
+<h3>tBodyAcc-mean()-X</h3>
+<div id="tBodyAcc_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAcc_mean___X_distribution-38-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAcc_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAcc-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">0.28</td>
+<td align="left">1</td>
+<td align="right">0.2743383</td>
+<td align="right">0.0676299</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAcc_mean___Y" class="section level3 tabset">
+<h3>tBodyAcc-mean()-Y</h3>
+<div id="tBodyAcc_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAcc_mean___Y_distribution-45-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAcc_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAcc-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.017</td>
+<td align="left">1</td>
+<td align="right">-0.0177439</td>
+<td align="right">0.0371317</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAcc_mean___Z" class="section level3 tabset">
+<h3>tBodyAcc-mean()-Z</h3>
+<div id="tBodyAcc_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAcc_mean___Z_distribution-52-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAcc_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAcc-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.11</td>
+<td align="left">1</td>
+<td align="right">-0.108911</td>
+<td align="right">0.0530277</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAcc_mean___X" class="section level3 tabset">
+<h3>tGravityAcc-mean()-X</h3>
+<div id="tGravityAcc_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAcc_mean___X_distribution-59-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAcc_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAcc-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">0.92</td>
+<td align="left">1</td>
+<td align="right">0.6691774</td>
+<td align="right">0.5155239</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAcc_mean___Y" class="section level3 tabset">
+<h3>tGravityAcc-mean()-Y</h3>
+<div id="tGravityAcc_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAcc_mean___Y_distribution-66-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAcc_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAcc-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.14</td>
+<td align="left">1</td>
+<td align="right">0.0040849</td>
+<td align="right">0.3789316</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2582&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAcc_mean___Z" class="section level3 tabset">
+<h3>tGravityAcc-mean()-Z</h3>
+<div id="tGravityAcc_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAcc_mean___Z_distribution-73-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAcc_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAcc-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">0.037</td>
+<td align="left">1</td>
+<td align="right">0.0921713</td>
+<td align="right">0.3342994</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2582&gt;&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2582&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerk_mean___X" class="section level3 tabset">
+<h3>tBodyAccJerk-mean()-X</h3>
+<div id="tBodyAccJerk_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerk_mean___X_distribution-80-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerk_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerk-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">0.076</td>
+<td align="left">1</td>
+<td align="right">0.0789487</td>
+<td align="right">0.1761265</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerk_mean___Y" class="section level3 tabset">
+<h3>tBodyAccJerk-mean()-Y</h3>
+<div id="tBodyAccJerk_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerk_mean___Y_distribution-87-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerk_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="6%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerk-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">0.011</td>
+<td align="left">1</td>
+<td align="right">0.0079511</td>
+<td align="right">0.164534</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerk_mean___Z" class="section level3 tabset">
+<h3>tBodyAccJerk-mean()-Z</h3>
+<div id="tBodyAccJerk_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerk_mean___Z_distribution-94-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerk_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="9%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerk-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.0012</td>
+<td align="left">1</td>
+<td align="right">-0.0046447</td>
+<td align="right">0.1559693</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyro_mean___X" class="section level3 tabset">
+<h3>tBodyGyro-mean()-X</h3>
+<div id="tBodyGyro_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyro_mean___X_distribution-101-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyro_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyro-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.028</td>
+<td align="left">1</td>
+<td align="right">-0.030945</td>
+<td align="right">0.1831665</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyro_mean___Y" class="section level3 tabset">
+<h3>tBodyGyro-mean()-Y</h3>
+<div id="tBodyGyro_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyro_mean___Y_distribution-108-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyro_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyro-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.075</td>
+<td align="left">1</td>
+<td align="right">-0.0747094</td>
+<td align="right">0.1343005</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyro_mean___Z" class="section level3 tabset">
+<h3>tBodyGyro-mean()-Z</h3>
+<div id="tBodyGyro_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyro_mean___Z_distribution-115-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyro_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyro-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">0.086</td>
+<td align="left">1</td>
+<td align="right">0.0883535</td>
+<td align="right">0.1348846</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerk_mean___X" class="section level3 tabset">
+<h3>tBodyGyroJerk-mean()-X</h3>
+<div id="tBodyGyroJerk_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerk_mean___X_distribution-122-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerk_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.098</td>
+<td align="left">1</td>
+<td align="right">-0.0967458</td>
+<td align="right">0.1280982</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerk_mean___Y" class="section level3 tabset">
+<h3>tBodyGyroJerk-mean()-Y</h3>
+<div id="tBodyGyroJerk_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerk_mean___Y_distribution-129-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerk_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="6%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.041</td>
+<td align="left">1</td>
+<td align="right">-0.04233</td>
+<td align="right">0.1144121</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerk_mean___Z" class="section level3 tabset">
+<h3>tBodyGyroJerk-mean()-Z</h3>
+<div id="tBodyGyroJerk_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerk_mean___Z_distribution-136-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerk_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.055</td>
+<td align="left">1</td>
+<td align="right">-0.0548131</td>
+<td align="right">0.1288983</td>
+<td align="left">&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccMag_mean__" class="section level3 tabset">
+<h3>tBodyAccMag-mean()</h3>
+<div id="tBodyAccMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccMag_mean___distribution-143-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.88</td>
+<td align="left">1</td>
+<td align="right">-0.5483231</td>
+<td align="right">0.4670822</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAccMag_mean__" class="section level3 tabset">
+<h3>tGravityAccMag-mean()</h3>
+<div id="tGravityAccMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAccMag_mean___distribution-150-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAccMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAccMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.88</td>
+<td align="left">1</td>
+<td align="right">-0.5483231</td>
+<td align="right">0.4670822</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerkMag_mean__" class="section level3 tabset">
+<h3>tBodyAccJerkMag-mean()</h3>
+<div id="tBodyAccJerkMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerkMag_mean___distribution-157-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerkMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerkMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.6494547</td>
+<td align="right">0.3895231</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroMag_mean__" class="section level3 tabset">
+<h3>tBodyGyroMag-mean()</h3>
+<div id="tBodyGyroMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroMag_mean___distribution-164-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.82</td>
+<td align="left">1</td>
+<td align="right">-0.6053592</td>
+<td align="right">0.3996686</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerkMag_mean__" class="section level3 tabset">
+<h3>tBodyGyroJerkMag-mean()</h3>
+<div id="tBodyGyroJerkMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerkMag_mean___distribution-171-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerkMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="7%" />
+<col width="7%" />
+<col width="9%" />
+<col width="2%" />
+<col width="4%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerkMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.96</td>
+<td align="left">1</td>
+<td align="right">-0.7621581</td>
+<td align="right">0.2765374</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAcc_mean___X" class="section level3 tabset">
+<h3>fBodyAcc-mean()-X</h3>
+<div id="fBodyAcc_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAcc_mean___X_distribution-178-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAcc_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="3%" />
+<col width="5%" />
+<col width="3%" />
+<col width="7%" />
+<col width="6%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAcc-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.622818</td>
+<td align="right">0.420815</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAcc_mean___Y" class="section level3 tabset">
+<h3>fBodyAcc-mean()-Y</h3>
+<div id="fBodyAcc_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAcc_mean___Y_distribution-185-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAcc_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAcc-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.86</td>
+<td align="left">1</td>
+<td align="right">-0.5375465</td>
+<td align="right">0.4817131</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAcc_mean___Z" class="section level3 tabset">
+<h3>fBodyAcc-mean()-Z</h3>
+<div id="fBodyAcc_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAcc_mean___Z_distribution-192-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAcc_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="6%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAcc-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.9</td>
+<td align="left">1</td>
+<td align="right">-0.6651018</td>
+<td align="right">0.358854</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccJerk_mean___X" class="section level3 tabset">
+<h3>fBodyAccJerk-mean()-X</h3>
+<div id="fBodyAccJerk_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccJerk_mean___X_distribution-199-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccJerk_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="6%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccJerk-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.6567608</td>
+<td align="right">0.390017</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccJerk_mean___Y" class="section level3 tabset">
+<h3>fBodyAccJerk-mean()-Y</h3>
+<div id="fBodyAccJerk_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccJerk_mean___Y_distribution-206-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccJerk_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccJerk-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.93</td>
+<td align="left">1</td>
+<td align="right">-0.628992</td>
+<td align="right">0.4073336</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccJerk_mean___Z" class="section level3 tabset">
+<h3>fBodyAccJerk-mean()-Z</h3>
+<div id="fBodyAccJerk_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccJerk_mean___Z_distribution-213-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccJerk_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccJerk-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.743621</td>
+<td align="right">0.2977357</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyGyro_mean___X" class="section level3 tabset">
+<h3>fBodyGyro-mean()-X</h3>
+<div id="fBodyGyro_mean___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyGyro_mean___X_distribution-220-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyGyro_mean___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyGyro-mean()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.89</td>
+<td align="left">1</td>
+<td align="right">-0.6721365</td>
+<td align="right">0.3515163</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyGyro_mean___Y" class="section level3 tabset">
+<h3>fBodyGyro-mean()-Y</h3>
+<div id="fBodyGyro_mean___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyGyro_mean___Y_distribution-227-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyGyro_mean___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyGyro-mean()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.92</td>
+<td align="left">1</td>
+<td align="right">-0.7062894</td>
+<td align="right">0.3356567</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyGyro_mean___Z" class="section level3 tabset">
+<h3>fBodyGyro-mean()-Z</h3>
+<div id="fBodyGyro_mean___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyGyro_mean___Z_distribution-234-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyGyro_mean___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyGyro-mean()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.89</td>
+<td align="left">1</td>
+<td align="right">-0.6442479</td>
+<td align="right">0.3820353</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccMag_mean__" class="section level3 tabset">
+<h3>fBodyAccMag-mean()</h3>
+<div id="fBodyAccMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccMag_mean___distribution-241-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.88</td>
+<td align="left">1</td>
+<td align="right">-0.5860195</td>
+<td align="right">0.4453505</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyBodyAccJerkMag_mean__" class="section level3 tabset">
+<h3>fBodyBodyAccJerkMag-mean()</h3>
+<div id="fBodyBodyAccJerkMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyBodyAccJerkMag_mean___distribution-248-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyBodyAccJerkMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="18%" />
+<col width="6%" />
+<col width="6%" />
+<col width="9%" />
+<col width="2%" />
+<col width="4%" />
+<col width="2%" />
+<col width="7%" />
+<col width="6%" />
+<col width="28%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyBodyAccJerkMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.93</td>
+<td align="left">1</td>
+<td align="right">-0.6208335</td>
+<td align="right">0.4250931</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyBodyGyroMag_mean__" class="section level3 tabset">
+<h3>fBodyBodyGyroMag-mean()</h3>
+<div id="fBodyBodyGyroMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyBodyGyroMag_mean___distribution-255-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyBodyGyroMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="17%" />
+<col width="7%" />
+<col width="7%" />
+<col width="9%" />
+<col width="2%" />
+<col width="4%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyBodyGyroMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.88</td>
+<td align="left">1</td>
+<td align="right">-0.6974741</td>
+<td align="right">0.3237006</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyBodyGyroJerkMag_mean__" class="section level3 tabset">
+<h3>fBodyBodyGyroJerkMag-mean()</h3>
+<div id="fBodyBodyGyroJerkMag_mean___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyBodyGyroJerkMag_mean___distribution-262-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyBodyGyroJerkMag_mean___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="19%" />
+<col width="6%" />
+<col width="6%" />
+<col width="9%" />
+<col width="2%" />
+<col width="4%" />
+<col width="2%" />
+<col width="7%" />
+<col width="6%" />
+<col width="28%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyBodyGyroJerkMag-mean()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.7797804</td>
+<td align="right">0.2676161</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAcc_std___X" class="section level3 tabset">
+<h3>tBodyAcc-std()-X</h3>
+<div id="tBodyAcc_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAcc_std___X_distribution-269-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAcc_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="3%" />
+<col width="5%" />
+<col width="3%" />
+<col width="8%" />
+<col width="6%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAcc-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.94</td>
+<td align="left">1</td>
+<td align="right">-0.6078544</td>
+<td align="right">0.438707</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAcc_std___Y" class="section level3 tabset">
+<h3>tBodyAcc-std()-Y</h3>
+<div id="tBodyAcc_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAcc_std___Y_distribution-276-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAcc_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="12%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAcc-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.84</td>
+<td align="left">1</td>
+<td align="right">-0.5102712</td>
+<td align="right">0.5002555</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAcc_std___Z" class="section level3 tabset">
+<h3>tBodyAcc-std()-Z</h3>
+<div id="tBodyAcc_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAcc_std___Z_distribution-283-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAcc_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="3%" />
+<col width="5%" />
+<col width="3%" />
+<col width="8%" />
+<col width="6%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAcc-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.85</td>
+<td align="left">1</td>
+<td align="right">-0.6132267</td>
+<td align="right">0.403527</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAcc_std___X" class="section level3 tabset">
+<h3>tGravityAcc-std()-X</h3>
+<div id="tGravityAcc_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAcc_std___X_distribution-290-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAcc_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAcc-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.98</td>
+<td align="left">1</td>
+<td align="right">-0.9652075</td>
+<td align="right">0.0777222</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAcc_std___Y" class="section level3 tabset">
+<h3>tGravityAcc-std()-Y</h3>
+<div id="tGravityAcc_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAcc_std___Y_distribution-297-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAcc_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAcc-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.98</td>
+<td align="left">1</td>
+<td align="right">-0.954405</td>
+<td align="right">0.0852946</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAcc_std___Z" class="section level3 tabset">
+<h3>tGravityAcc-std()-Z</h3>
+<div id="tGravityAcc_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAcc_std___Z_distribution-304-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAcc_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="14%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAcc-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.97</td>
+<td align="left">1</td>
+<td align="right">-0.9389132</td>
+<td align="right">0.1015605</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerk_std___X" class="section level3 tabset">
+<h3>tBodyAccJerk-std()-X</h3>
+<div id="tBodyAccJerk_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerk_std___X_distribution-311-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerk_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerk-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.6398366</td>
+<td align="right">0.4087318</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerk_std___Y" class="section level3 tabset">
+<h3>tBodyAccJerk-std()-Y</h3>
+<div id="tBodyAccJerk_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerk_std___Y_distribution-318-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerk_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerk-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.93</td>
+<td align="left">1</td>
+<td align="right">-0.6080047</td>
+<td align="right">0.4329198</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerk_std___Z" class="section level3 tabset">
+<h3>tBodyAccJerk-std()-Z</h3>
+<div id="tBodyAccJerk_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerk_std___Z_distribution-325-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerk_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerk-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.7628343</td>
+<td align="right">0.2779264</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyro_std___X" class="section level3 tabset">
+<h3>tBodyGyro-std()-X</h3>
+<div id="tBodyGyro_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyro_std___X_distribution-332-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyro_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyro-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.9</td>
+<td align="left">1</td>
+<td align="right">-0.7212375</td>
+<td align="right">0.3010386</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyro_std___Y" class="section level3 tabset">
+<h3>tBodyGyro-std()-Y</h3>
+<div id="tBodyGyro_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyro_std___Y_distribution-339-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyro_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyro-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.91</td>
+<td align="left">1</td>
+<td align="right">-0.6828067</td>
+<td align="right">0.3567478</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyro_std___Z" class="section level3 tabset">
+<h3>tBodyGyro-std()-Z</h3>
+<div id="tBodyGyro_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyro_std___Z_distribution-346-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyro_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyro-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.88</td>
+<td align="left">1</td>
+<td align="right">-0.6537433</td>
+<td align="right">0.3726003</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerk_std___X" class="section level3 tabset">
+<h3>tBodyGyroJerk-std()-X</h3>
+<div id="tBodyGyroJerk_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerk_std___X_distribution-353-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerk_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.93</td>
+<td align="left">1</td>
+<td align="right">-0.7313592</td>
+<td align="right">0.3038443</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerk_std___Y" class="section level3 tabset">
+<h3>tBodyGyroJerk-std()-Y</h3>
+<div id="tBodyGyroJerk_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerk_std___Y_distribution-360-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerk_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.7860837</td>
+<td align="right">0.2727378</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerk_std___Z" class="section level3 tabset">
+<h3>tBodyGyroJerk-std()-Z</h3>
+<div id="tBodyGyroJerk_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerk_std___Z_distribution-367-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerk_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerk-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.95</td>
+<td align="left">1</td>
+<td align="right">-0.7399582</td>
+<td align="right">0.3020178</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccMag_std__" class="section level3 tabset">
+<h3>tBodyAccMag-std()</h3>
+<div id="tBodyAccMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccMag_std___distribution-374-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.84</td>
+<td align="left">1</td>
+<td align="right">-0.5912999</td>
+<td align="right">0.4294396</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tGravityAccMag_std__" class="section level3 tabset">
+<h3>tGravityAccMag-std()</h3>
+<div id="tGravityAccMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tGravityAccMag_std___distribution-381-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tGravityAccMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tGravityAccMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.84</td>
+<td align="left">1</td>
+<td align="right">-0.5912999</td>
+<td align="right">0.4294396</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyAccJerkMag_std__" class="section level3 tabset">
+<h3>tBodyAccJerkMag-std()</h3>
+<div id="tBodyAccJerkMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyAccJerkMag_std___distribution-388-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyAccJerkMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyAccJerkMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.93</td>
+<td align="left">1</td>
+<td align="right">-0.6278138</td>
+<td align="right">0.4172453</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroMag_std__" class="section level3 tabset">
+<h3>tBodyGyroMag-std()</h3>
+<div id="tBodyGyroMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroMag_std___distribution-395-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="14%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="6%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.83</td>
+<td align="left">1</td>
+<td align="right">-0.6626513</td>
+<td align="right">0.349155</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="tBodyGyroJerkMag_std__" class="section level3 tabset">
+<h3>tBodyGyroJerkMag-std()</h3>
+<div id="tBodyGyroJerkMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_tBodyGyroJerkMag_std___distribution-402-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="tBodyGyroJerkMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">tBodyGyroJerkMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.94</td>
+<td align="left">1</td>
+<td align="right">-0.7780071</td>
+<td align="right">0.2716147</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAcc_std___X" class="section level3 tabset">
+<h3>fBodyAcc-std()-X</h3>
+<div id="fBodyAcc_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAcc_std___X_distribution-409-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAcc_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="12%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAcc-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.94</td>
+<td align="left">1</td>
+<td align="right">-0.6034318</td>
+<td align="right">0.4468026</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAcc_std___Y" class="section level3 tabset">
+<h3>fBodyAcc-std()-Y</h3>
+<div id="fBodyAcc_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAcc_std___Y_distribution-416-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAcc_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="12%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAcc-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.83</td>
+<td align="left">1</td>
+<td align="right">-0.5285073</td>
+<td align="right">0.4799307</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAcc_std___Z" class="section level3 tabset">
+<h3>fBodyAcc-std()-Z</h3>
+<div id="fBodyAcc_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAcc_std___Z_distribution-423-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAcc_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="12%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="3%" />
+<col width="5%" />
+<col width="3%" />
+<col width="8%" />
+<col width="6%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAcc-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.84</td>
+<td align="left">1</td>
+<td align="right">-0.6180647</td>
+<td align="right">0.398778</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccJerk_std___X" class="section level3 tabset">
+<h3>fBodyAccJerk-std()-X</h3>
+<div id="fBodyAccJerk_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccJerk_std___X_distribution-430-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccJerk_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="6%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccJerk-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.96</td>
+<td align="left">1</td>
+<td align="right">-0.655039</td>
+<td align="right">0.393307</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccJerk_std___Y" class="section level3 tabset">
+<h3>fBodyAccJerk-std()-Y</h3>
+<div id="fBodyAccJerk_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccJerk_std___Y_distribution-437-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccJerk_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccJerk-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.93</td>
+<td align="left">1</td>
+<td align="right">-0.6122771</td>
+<td align="right">0.4335598</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccJerk_std___Z" class="section level3 tabset">
+<h3>fBodyAccJerk-std()-Z</h3>
+<div id="fBodyAccJerk_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccJerk_std___Z_distribution-444-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccJerk_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccJerk-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.96</td>
+<td align="left">1</td>
+<td align="right">-0.7809439</td>
+<td align="right">0.2595659</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyGyro_std___X" class="section level3 tabset">
+<h3>fBodyGyro-std()-X</h3>
+<div id="fBodyGyro_std___X_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyGyro_std___X_distribution-451-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyGyro_std___X_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="3%" />
+<col width="5%" />
+<col width="3%" />
+<col width="6%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyGyro-std()-X</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.91</td>
+<td align="left">1</td>
+<td align="right">-0.73864</td>
+<td align="right">0.2857823</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyGyro_std___Y" class="section level3 tabset">
+<h3>fBodyGyro-std()-Y</h3>
+<div id="fBodyGyro_std___Y_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyGyro_std___Y_distribution-458-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyGyro_std___Y_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyGyro-std()-Y</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.91</td>
+<td align="left">1</td>
+<td align="right">-0.6744152</td>
+<td align="right">0.3694492</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyGyro_std___Z" class="section level3 tabset">
+<h3>fBodyGyro-std()-Z</h3>
+<div id="fBodyGyro_std___Z_distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyGyro_std___Z_distribution-465-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyGyro_std___Z_summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyGyro-std()-Z</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.89</td>
+<td align="left">1</td>
+<td align="right">-0.690524</td>
+<td align="right">0.3372967</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyAccMag_std__" class="section level3 tabset">
+<h3>fBodyAccMag-std()</h3>
+<div id="fBodyAccMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyAccMag_std___distribution-472-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyAccMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="13%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="8%" />
+<col width="7%" />
+<col width="30%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyAccMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.85</td>
+<td align="left">1</td>
+<td align="right">-0.6596033</td>
+<td align="right">0.3554249</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2585&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyBodyAccJerkMag_std__" class="section level3 tabset">
+<h3>fBodyBodyAccJerkMag-std()</h3>
+<div id="fBodyBodyAccJerkMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyBodyAccJerkMag_std___distribution-479-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyBodyAccJerkMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table>
+<colgroup>
+<col width="18%" />
+<col width="6%" />
+<col width="6%" />
+<col width="9%" />
+<col width="2%" />
+<col width="4%" />
+<col width="2%" />
+<col width="7%" />
+<col width="6%" />
+<col width="28%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyBodyAccJerkMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.93</td>
+<td align="left">1</td>
+<td align="right">-0.6401365</td>
+<td align="right">0.4060383</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyBodyGyroMag_std__" class="section level3 tabset">
+<h3>fBodyBodyGyroMag-std()</h3>
+<div id="fBodyBodyGyroMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyBodyGyroMag_std___distribution-486-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyBodyGyroMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="16%" />
+<col width="7%" />
+<col width="7%" />
+<col width="10%" />
+<col width="2%" />
+<col width="5%" />
+<col width="2%" />
+<col width="7%" />
+<col width="7%" />
+<col width="29%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyBodyGyroMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.83</td>
+<td align="left">1</td>
+<td align="right">-0.7001058</td>
+<td align="right">0.3103326</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2583&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="fBodyBodyGyroJerkMag_std__" class="section level3 tabset">
+<h3>fBodyBodyGyroJerkMag-std()</h3>
+<div id="fBodyBodyGyroJerkMag_std___distribution" class="section level4">
+<h4>Distribution</h4>
+<p>figure/cb_data_cb_data_cb_data_fBodyBodyGyroJerkMag_std___distribution-493-1.pdf</p>
+<p>0 missing values.</p>
+</div>
+<div id="fBodyBodyGyroJerkMag_std___summary" class="section level4">
+<h4>Summary statistics</h4>
+<table style="width:100%;">
+<colgroup>
+<col width="18%" />
+<col width="6%" />
+<col width="6%" />
+<col width="9%" />
+<col width="2%" />
+<col width="4%" />
+<col width="2%" />
+<col width="7%" />
+<col width="6%" />
+<col width="28%" />
+<col width="4%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">name</th>
+<th align="left">data_type</th>
+<th align="right">n_missing</th>
+<th align="right">complete_rate</th>
+<th align="left">min</th>
+<th align="left">median</th>
+<th align="left">max</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="left">hist</th>
+<th align="left">label</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">fBodyBodyGyroJerkMag-std()</td>
+<td align="left">numeric</td>
+<td align="right">0</td>
+<td align="right">1</td>
+<td align="left">-1</td>
+<td align="left">-0.94</td>
+<td align="left">1</td>
+<td align="right">-0.7922048</td>
+<td align="right">0.2591828</td>
+<td align="left">&lt;U+2587&gt;&lt;U+2582&gt;&lt;U+2581&gt;&lt;U+2581&gt;&lt;U+2581&gt;</td>
+<td align="left">NA</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="missingness-report" class="section level2">
+<h2>Missingness report</h2>
+</div>
+<div id="codebook-table" class="section level2">
+<h2>Codebook table</h2>
+</div>
+<div id="error-in-loadnamespacename-there-is-no-package-called-webshot" class="section level2">
+<h2>Error in loadNamespace(name): there is no package called ‘webshot’</h2>
+<script type="application/ld+json">
+{
+  "name": "data",
+  "datePublished": "2020-08-10",
+  "description": "The dataset has N=10297 rows and 68 columns.\n10297 rows have no missing values on any column.\n\n\n## Table of variables\nThis table contains variable names, labels, and number of missing values.\nSee the complete codebook for more.\n\n|name                        |label | n_missing|\n|:---------------------------|:-----|---------:|\n|subject                     |NA    |         0|\n|activities                  |NA    |         0|\n|tBodyAcc-mean()-X           |NA    |         0|\n|tBodyAcc-mean()-Y           |NA    |         0|\n|tBodyAcc-mean()-Z           |NA    |         0|\n|tGravityAcc-mean()-X        |NA    |         0|\n|tGravityAcc-mean()-Y        |NA    |         0|\n|tGravityAcc-mean()-Z        |NA    |         0|\n|tBodyAccJerk-mean()-X       |NA    |         0|\n|tBodyAccJerk-mean()-Y       |NA    |         0|\n|tBodyAccJerk-mean()-Z       |NA    |         0|\n|tBodyGyro-mean()-X          |NA    |         0|\n|tBodyGyro-mean()-Y          |NA    |         0|\n|tBodyGyro-mean()-Z          |NA    |         0|\n|tBodyGyroJerk-mean()-X      |NA    |         0|\n|tBodyGyroJerk-mean()-Y      |NA    |         0|\n|tBodyGyroJerk-mean()-Z      |NA    |         0|\n|tBodyAccMag-mean()          |NA    |         0|\n|tGravityAccMag-mean()       |NA    |         0|\n|tBodyAccJerkMag-mean()      |NA    |         0|\n|tBodyGyroMag-mean()         |NA    |         0|\n|tBodyGyroJerkMag-mean()     |NA    |         0|\n|fBodyAcc-mean()-X           |NA    |         0|\n|fBodyAcc-mean()-Y           |NA    |         0|\n|fBodyAcc-mean()-Z           |NA    |         0|\n|fBodyAccJerk-mean()-X       |NA    |         0|\n|fBodyAccJerk-mean()-Y       |NA    |         0|\n|fBodyAccJerk-mean()-Z       |NA    |         0|\n|fBodyGyro-mean()-X          |NA    |         0|\n|fBodyGyro-mean()-Y          |NA    |         0|\n|fBodyGyro-mean()-Z          |NA    |         0|\n|fBodyAccMag-mean()          |NA    |         0|\n|fBodyBodyAccJerkMag-mean()  |NA    |         0|\n|fBodyBodyGyroMag-mean()     |NA    |         0|\n|fBodyBodyGyroJerkMag-mean() |NA    |         0|\n|tBodyAcc-std()-X            |NA    |         0|\n|tBodyAcc-std()-Y            |NA    |         0|\n|tBodyAcc-std()-Z            |NA    |         0|\n|tGravityAcc-std()-X         |NA    |         0|\n|tGravityAcc-std()-Y         |NA    |         0|\n|tGravityAcc-std()-Z         |NA    |         0|\n|tBodyAccJerk-std()-X        |NA    |         0|\n|tBodyAccJerk-std()-Y        |NA    |         0|\n|tBodyAccJerk-std()-Z        |NA    |         0|\n|tBodyGyro-std()-X           |NA    |         0|\n|tBodyGyro-std()-Y           |NA    |         0|\n|tBodyGyro-std()-Z           |NA    |         0|\n|tBodyGyroJerk-std()-X       |NA    |         0|\n|tBodyGyroJerk-std()-Y       |NA    |         0|\n|tBodyGyroJerk-std()-Z       |NA    |         0|\n|tBodyAccMag-std()           |NA    |         0|\n|tGravityAccMag-std()        |NA    |         0|\n|tBodyAccJerkMag-std()       |NA    |         0|\n|tBodyGyroMag-std()          |NA    |         0|\n|tBodyGyroJerkMag-std()      |NA    |         0|\n|fBodyAcc-std()-X            |NA    |         0|\n|fBodyAcc-std()-Y            |NA    |         0|\n|fBodyAcc-std()-Z            |NA    |         0|\n|fBodyAccJerk-std()-X        |NA    |         0|\n|fBodyAccJerk-std()-Y        |NA    |         0|\n|fBodyAccJerk-std()-Z        |NA    |         0|\n|fBodyGyro-std()-X           |NA    |         0|\n|fBodyGyro-std()-Y           |NA    |         0|\n|fBodyGyro-std()-Z           |NA    |         0|\n|fBodyAccMag-std()           |NA    |         0|\n|fBodyBodyAccJerkMag-std()   |NA    |         0|\n|fBodyBodyGyroMag-std()      |NA    |         0|\n|fBodyBodyGyroJerkMag-std()  |NA    |         0|\n\n### Note\nThis dataset was automatically described using the [codebook R package](https://rubenarslan.github.io/codebook/) (version 0.9.2).",
+  "keywords": ["subject", "activities", "tBodyAcc-mean()-X", "tBodyAcc-mean()-Y", "tBodyAcc-mean()-Z", "tGravityAcc-mean()-X", "tGravityAcc-mean()-Y", "tGravityAcc-mean()-Z", "tBodyAccJerk-mean()-X", "tBodyAccJerk-mean()-Y", "tBodyAccJerk-mean()-Z", "tBodyGyro-mean()-X", "tBodyGyro-mean()-Y", "tBodyGyro-mean()-Z", "tBodyGyroJerk-mean()-X", "tBodyGyroJerk-mean()-Y", "tBodyGyroJerk-mean()-Z", "tBodyAccMag-mean()", "tGravityAccMag-mean()", "tBodyAccJerkMag-mean()", "tBodyGyroMag-mean()", "tBodyGyroJerkMag-mean()", "fBodyAcc-mean()-X", "fBodyAcc-mean()-Y", "fBodyAcc-mean()-Z", "fBodyAccJerk-mean()-X", "fBodyAccJerk-mean()-Y", "fBodyAccJerk-mean()-Z", "fBodyGyro-mean()-X", "fBodyGyro-mean()-Y", "fBodyGyro-mean()-Z", "fBodyAccMag-mean()", "fBodyBodyAccJerkMag-mean()", "fBodyBodyGyroMag-mean()", "fBodyBodyGyroJerkMag-mean()", "tBodyAcc-std()-X", "tBodyAcc-std()-Y", "tBodyAcc-std()-Z", "tGravityAcc-std()-X", "tGravityAcc-std()-Y", "tGravityAcc-std()-Z", "tBodyAccJerk-std()-X", "tBodyAccJerk-std()-Y", "tBodyAccJerk-std()-Z", "tBodyGyro-std()-X", "tBodyGyro-std()-Y", "tBodyGyro-std()-Z", "tBodyGyroJerk-std()-X", "tBodyGyroJerk-std()-Y", "tBodyGyroJerk-std()-Z", "tBodyAccMag-std()", "tGravityAccMag-std()", "tBodyAccJerkMag-std()", "tBodyGyroMag-std()", "tBodyGyroJerkMag-std()", "fBodyAcc-std()-X", "fBodyAcc-std()-Y", "fBodyAcc-std()-Z", "fBodyAccJerk-std()-X", "fBodyAccJerk-std()-Y", "fBodyAccJerk-std()-Z", "fBodyGyro-std()-X", "fBodyGyro-std()-Y", "fBodyGyro-std()-Z", "fBodyAccMag-std()", "fBodyBodyAccJerkMag-std()", "fBodyBodyGyroMag-std()", "fBodyBodyGyroJerkMag-std()"],
+  "@context": "http://schema.org/",
+  "@type": "Dataset",
+  "variableMeasured": [
+    {
+      "name": "subject",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "activities",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAcc-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAcc-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAcc-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAcc-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAcc-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAcc-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerk-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerk-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerk-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyro-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyro-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyro-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerk-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerk-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerk-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAccMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerkMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerkMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAcc-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAcc-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAcc-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccJerk-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccJerk-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccJerk-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyGyro-mean()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyGyro-mean()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyGyro-mean()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyBodyAccJerkMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyBodyGyroMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyBodyGyroJerkMag-mean()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAcc-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAcc-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAcc-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAcc-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAcc-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAcc-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerk-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerk-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerk-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyro-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyro-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyro-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerk-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerk-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerk-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tGravityAccMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyAccJerkMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "tBodyGyroJerkMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAcc-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAcc-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAcc-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccJerk-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccJerk-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccJerk-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyGyro-std()-X",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyGyro-std()-Y",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyGyro-std()-Z",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyAccMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyBodyAccJerkMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyBodyGyroMag-std()",
+      "@type": "propertyValue"
+    },
+    {
+      "name": "fBodyBodyGyroJerkMag-std()",
+      "@type": "propertyValue"
+    }
+  ]
+}
+</script>
+<details>
+<p><summary>JSON-LD metadata</summary> The following JSON-LD can be found by search engines, if you share this codebook publicly on the web.</p>
+<pre class="json"><code>{
+  &quot;name&quot;: &quot;data&quot;,
+  &quot;datePublished&quot;: &quot;2020-08-10&quot;,
+  &quot;description&quot;: &quot;The dataset has N=10297 rows and 68 columns.\n10297 rows have no missing values on any column.\n\n\n## Table of variables\nThis table contains variable names, labels, and number of missing values.\nSee the complete codebook for more.\n\n|name                        |label | n_missing|\n|:---------------------------|:-----|---------:|\n|subject                     |NA    |         0|\n|activities                  |NA    |         0|\n|tBodyAcc-mean()-X           |NA    |         0|\n|tBodyAcc-mean()-Y           |NA    |         0|\n|tBodyAcc-mean()-Z           |NA    |         0|\n|tGravityAcc-mean()-X        |NA    |         0|\n|tGravityAcc-mean()-Y        |NA    |         0|\n|tGravityAcc-mean()-Z        |NA    |         0|\n|tBodyAccJerk-mean()-X       |NA    |         0|\n|tBodyAccJerk-mean()-Y       |NA    |         0|\n|tBodyAccJerk-mean()-Z       |NA    |         0|\n|tBodyGyro-mean()-X          |NA    |         0|\n|tBodyGyro-mean()-Y          |NA    |         0|\n|tBodyGyro-mean()-Z          |NA    |         0|\n|tBodyGyroJerk-mean()-X      |NA    |         0|\n|tBodyGyroJerk-mean()-Y      |NA    |         0|\n|tBodyGyroJerk-mean()-Z      |NA    |         0|\n|tBodyAccMag-mean()          |NA    |         0|\n|tGravityAccMag-mean()       |NA    |         0|\n|tBodyAccJerkMag-mean()      |NA    |         0|\n|tBodyGyroMag-mean()         |NA    |         0|\n|tBodyGyroJerkMag-mean()     |NA    |         0|\n|fBodyAcc-mean()-X           |NA    |         0|\n|fBodyAcc-mean()-Y           |NA    |         0|\n|fBodyAcc-mean()-Z           |NA    |         0|\n|fBodyAccJerk-mean()-X       |NA    |         0|\n|fBodyAccJerk-mean()-Y       |NA    |         0|\n|fBodyAccJerk-mean()-Z       |NA    |         0|\n|fBodyGyro-mean()-X          |NA    |         0|\n|fBodyGyro-mean()-Y          |NA    |         0|\n|fBodyGyro-mean()-Z          |NA    |         0|\n|fBodyAccMag-mean()          |NA    |         0|\n|fBodyBodyAccJerkMag-mean()  |NA    |         0|\n|fBodyBodyGyroMag-mean()     |NA    |         0|\n|fBodyBodyGyroJerkMag-mean() |NA    |         0|\n|tBodyAcc-std()-X            |NA    |         0|\n|tBodyAcc-std()-Y            |NA    |         0|\n|tBodyAcc-std()-Z            |NA    |         0|\n|tGravityAcc-std()-X         |NA    |         0|\n|tGravityAcc-std()-Y         |NA    |         0|\n|tGravityAcc-std()-Z         |NA    |         0|\n|tBodyAccJerk-std()-X        |NA    |         0|\n|tBodyAccJerk-std()-Y        |NA    |         0|\n|tBodyAccJerk-std()-Z        |NA    |         0|\n|tBodyGyro-std()-X           |NA    |         0|\n|tBodyGyro-std()-Y           |NA    |         0|\n|tBodyGyro-std()-Z           |NA    |         0|\n|tBodyGyroJerk-std()-X       |NA    |         0|\n|tBodyGyroJerk-std()-Y       |NA    |         0|\n|tBodyGyroJerk-std()-Z       |NA    |         0|\n|tBodyAccMag-std()           |NA    |         0|\n|tGravityAccMag-std()        |NA    |         0|\n|tBodyAccJerkMag-std()       |NA    |         0|\n|tBodyGyroMag-std()          |NA    |         0|\n|tBodyGyroJerkMag-std()      |NA    |         0|\n|fBodyAcc-std()-X            |NA    |         0|\n|fBodyAcc-std()-Y            |NA    |         0|\n|fBodyAcc-std()-Z            |NA    |         0|\n|fBodyAccJerk-std()-X        |NA    |         0|\n|fBodyAccJerk-std()-Y        |NA    |         0|\n|fBodyAccJerk-std()-Z        |NA    |         0|\n|fBodyGyro-std()-X           |NA    |         0|\n|fBodyGyro-std()-Y           |NA    |         0|\n|fBodyGyro-std()-Z           |NA    |         0|\n|fBodyAccMag-std()           |NA    |         0|\n|fBodyBodyAccJerkMag-std()   |NA    |         0|\n|fBodyBodyGyroMag-std()      |NA    |         0|\n|fBodyBodyGyroJerkMag-std()  |NA    |         0|\n\n### Note\nThis dataset was automatically described using the [codebook R package](https://rubenarslan.github.io/codebook/) (version 0.9.2).&quot;,
+  &quot;keywords&quot;: [&quot;subject&quot;, &quot;activities&quot;, &quot;tBodyAcc-mean()-X&quot;, &quot;tBodyAcc-mean()-Y&quot;, &quot;tBodyAcc-mean()-Z&quot;, &quot;tGravityAcc-mean()-X&quot;, &quot;tGravityAcc-mean()-Y&quot;, &quot;tGravityAcc-mean()-Z&quot;, &quot;tBodyAccJerk-mean()-X&quot;, &quot;tBodyAccJerk-mean()-Y&quot;, &quot;tBodyAccJerk-mean()-Z&quot;, &quot;tBodyGyro-mean()-X&quot;, &quot;tBodyGyro-mean()-Y&quot;, &quot;tBodyGyro-mean()-Z&quot;, &quot;tBodyGyroJerk-mean()-X&quot;, &quot;tBodyGyroJerk-mean()-Y&quot;, &quot;tBodyGyroJerk-mean()-Z&quot;, &quot;tBodyAccMag-mean()&quot;, &quot;tGravityAccMag-mean()&quot;, &quot;tBodyAccJerkMag-mean()&quot;, &quot;tBodyGyroMag-mean()&quot;, &quot;tBodyGyroJerkMag-mean()&quot;, &quot;fBodyAcc-mean()-X&quot;, &quot;fBodyAcc-mean()-Y&quot;, &quot;fBodyAcc-mean()-Z&quot;, &quot;fBodyAccJerk-mean()-X&quot;, &quot;fBodyAccJerk-mean()-Y&quot;, &quot;fBodyAccJerk-mean()-Z&quot;, &quot;fBodyGyro-mean()-X&quot;, &quot;fBodyGyro-mean()-Y&quot;, &quot;fBodyGyro-mean()-Z&quot;, &quot;fBodyAccMag-mean()&quot;, &quot;fBodyBodyAccJerkMag-mean()&quot;, &quot;fBodyBodyGyroMag-mean()&quot;, &quot;fBodyBodyGyroJerkMag-mean()&quot;, &quot;tBodyAcc-std()-X&quot;, &quot;tBodyAcc-std()-Y&quot;, &quot;tBodyAcc-std()-Z&quot;, &quot;tGravityAcc-std()-X&quot;, &quot;tGravityAcc-std()-Y&quot;, &quot;tGravityAcc-std()-Z&quot;, &quot;tBodyAccJerk-std()-X&quot;, &quot;tBodyAccJerk-std()-Y&quot;, &quot;tBodyAccJerk-std()-Z&quot;, &quot;tBodyGyro-std()-X&quot;, &quot;tBodyGyro-std()-Y&quot;, &quot;tBodyGyro-std()-Z&quot;, &quot;tBodyGyroJerk-std()-X&quot;, &quot;tBodyGyroJerk-std()-Y&quot;, &quot;tBodyGyroJerk-std()-Z&quot;, &quot;tBodyAccMag-std()&quot;, &quot;tGravityAccMag-std()&quot;, &quot;tBodyAccJerkMag-std()&quot;, &quot;tBodyGyroMag-std()&quot;, &quot;tBodyGyroJerkMag-std()&quot;, &quot;fBodyAcc-std()-X&quot;, &quot;fBodyAcc-std()-Y&quot;, &quot;fBodyAcc-std()-Z&quot;, &quot;fBodyAccJerk-std()-X&quot;, &quot;fBodyAccJerk-std()-Y&quot;, &quot;fBodyAccJerk-std()-Z&quot;, &quot;fBodyGyro-std()-X&quot;, &quot;fBodyGyro-std()-Y&quot;, &quot;fBodyGyro-std()-Z&quot;, &quot;fBodyAccMag-std()&quot;, &quot;fBodyBodyAccJerkMag-std()&quot;, &quot;fBodyBodyGyroMag-std()&quot;, &quot;fBodyBodyGyroJerkMag-std()&quot;],
+  &quot;@context&quot;: &quot;http://schema.org/&quot;,
+  &quot;@type&quot;: &quot;Dataset&quot;,
+  &quot;variableMeasured&quot;: [
+    {
+      &quot;name&quot;: &quot;subject&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;activities&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAcc-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAcc-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAcc-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAcc-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAcc-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAcc-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerk-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerk-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerk-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyro-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyro-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyro-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerk-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerk-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerk-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAccMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerkMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerkMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAcc-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAcc-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAcc-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccJerk-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccJerk-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccJerk-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyGyro-mean()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyGyro-mean()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyGyro-mean()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyBodyAccJerkMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyBodyGyroMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyBodyGyroJerkMag-mean()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAcc-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAcc-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAcc-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAcc-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAcc-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAcc-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerk-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerk-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerk-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyro-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyro-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyro-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerk-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerk-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerk-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tGravityAccMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyAccJerkMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;tBodyGyroJerkMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAcc-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAcc-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAcc-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccJerk-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccJerk-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccJerk-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyGyro-std()-X&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyGyro-std()-Y&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyGyro-std()-Z&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyAccMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyBodyAccJerkMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyBodyGyroMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    },
+    {
+      &quot;name&quot;: &quot;fBodyBodyGyroJerkMag-std()&quot;,
+      &quot;@type&quot;: &quot;propertyValue&quot;
+    }
+  ]
+}`</code></pre>
+</details>
+</div>
+
+
+
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- tabsets -->
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
